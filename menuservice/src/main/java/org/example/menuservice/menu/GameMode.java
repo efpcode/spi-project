@@ -1,4 +1,5 @@
 package org.example.menuservice.menu;
 
-public interface GameMode {
+public @interface GameMode {
+    String value();
 }

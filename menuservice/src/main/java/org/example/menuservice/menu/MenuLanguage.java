@@ -1,4 +1,6 @@
 package org.example.menuservice.menu;
 
-public interface MenuLanguage {
+public @interface MenuLanguage {
+    String value();
+
 }
