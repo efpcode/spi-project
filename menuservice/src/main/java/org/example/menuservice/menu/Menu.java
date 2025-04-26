@@ -1,17 +1,14 @@
 package org.example.menuservice.menu;
 
 public interface Menu {
+    public String getStartButtonText();
+    public String getOptionsButtonText();
+    public String getQuitButtonText();
+    public String getBackButtonText();
     public String getTitle();
-    public void setTitle(String title);
-    public String getDescription();
-    public void setDescription(String description);
-    public String getIcon();
-    public void setIcon(String icon);
+    public String getGameButton();
+    public String getGameDescription();
 
-    public Menu getNext();
-    public Menu getPrevious();
-    public void setNext(Menu menu);
-    public void setPrevious(Menu menu);
-    public void exit();
+
 
 }
