@@ -38,6 +38,6 @@ public class EnglishMenu implements Menu {
 
     @Override
     public String getGameDescription() {
-        return "Guess A Number";
+        return "Guess A Number ";
     }
 }

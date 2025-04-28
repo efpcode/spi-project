@@ -1,7 +1,8 @@
 package org.example.menuprovider.provider;
-
 import org.example.menuservice.menu.Menu;
+import org.example.menuservice.menu.MenuLanguage;
 
+@MenuLanguage("Svenska")
 public class SwedishMenu implements Menu {
     @Override
     public String getStartButtonText() {

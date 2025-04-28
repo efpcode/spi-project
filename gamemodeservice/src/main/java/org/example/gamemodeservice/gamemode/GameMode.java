@@ -1,4 +1,4 @@
-package org.example.menuservice.menu;
+package org.example.gamemodeservice.gamemode;
 
 import java.lang.annotation.*;
 
