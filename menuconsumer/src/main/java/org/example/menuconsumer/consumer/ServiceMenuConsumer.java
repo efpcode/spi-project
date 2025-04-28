@@ -19,7 +19,7 @@ public class ServiceMenuConsumer {
 
         System.out.println("Loaded Menu implementations:");
         for (Menu menu : loader) {
-            System.out.println(" - " + menu.getClass().getName()); // ✅ Debug output
+            System.out.println(" - " + menu.getClass().getName());
         }
 
 
