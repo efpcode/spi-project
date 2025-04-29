@@ -13,25 +13,17 @@ public class ServiceMenuConsumer {
     public static void initializeMenu() {
 
         ServiceLoader<Menu> loader = ServiceLoader.load(Menu.class);
-        System.out.println(loader.findFirst().isEmpty());
         println("Select a language : [1] English, [2] Svenska");
         String userInput = getSelectedMenu();
 
-        System.out.println("Loaded Menu implementations:");
         for (Menu menu : loader) {
-            System.out.println(" - " + menu.getClass().getName());
-        }
-
-
-        for (Menu menu : loader) {
-                MenuLanguage menuLanguage = menu.getClass().getAnnotation(MenuLanguage.class);
-            System.out.println(menuLanguage.value() + "Something !!!!!!");
-            if(menuLanguage != null && userInput.equals(menuLanguage.value())) {
-                        selectedMenu = menu;
-                        break;
-                    }
-
+            MenuLanguage menuLanguage = menu.getClass().getAnnotation(MenuLanguage.class);
+            if (menuLanguage != null && userInput.equals(menuLanguage.value())) {
+                selectedMenu = menu;
+                break;
             }
+
+        }
 
         if (selectedMenu == null) {
             println("No matching menu found! Using default.");
@@ -40,13 +32,11 @@ public class ServiceMenuConsumer {
     }
 
 
-
-
     public static void showMenu() {
         println(selectedMenu.getTitle());
-        println("[1]: "+ selectedMenu.getStartButtonText());
-        println("[2]: "+ selectedMenu.getOptionsButtonText());
-        println("[3]: "+ selectedMenu.getQuitButtonText());
+        println("[1]: " + selectedMenu.getStartButtonText());
+        println("[2]: " + selectedMenu.getOptionsButtonText());
+        println("[3]: " + selectedMenu.getQuitButtonText());
     }
 
 
@@ -55,27 +45,21 @@ public class ServiceMenuConsumer {
         int userInt;
 
         while (true) {
-            try{
+            try {
                 userInput = readln("Please enter a digit: ");
                 userInt = Integer.parseInt(userInput);
                 break;
-            }catch (NumberFormatException e){
+            } catch (NumberFormatException e) {
                 println("Invalid Input!");
             }
         }
 
 
-      return switch (userInt) {
-           case 1 -> "English";
-           case 2 -> "Svenska";
-           default -> "English";
-       };
+        return switch (userInt) {
+            case 1 -> "English";
+            case 2 -> "Svenska";
+            default -> "English";
+        };
 
     }
-
-    public static void main(String[] args) {
-        initializeMenu();
-        showMenu();
-    }
-
 }
