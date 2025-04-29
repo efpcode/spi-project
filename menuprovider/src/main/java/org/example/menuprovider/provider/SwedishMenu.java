@@ -19,23 +19,10 @@ public class SwedishMenu implements Menu {
         return "Avsluta";
     }
 
-    @Override
-    public String getBackButtonText() {
-        return "Tillbaka";
-    }
 
-    @Override
     public String getTitle() {
-        return "Välkommen till Gissa Nummret";
+        return "Välkommen till Lösenord Generatorn";
     }
 
-    @Override
-    public String getGameButton() {
-        return "Gissa";
-    }
 
-    @Override
-    public String getGameDescription() {
-        return "Gissa Nummret";
-    }
 }

@@ -12,8 +12,10 @@
         <module>menuconsumer</module>
         <module>menuservice</module>
         <module>menuprovider</module>
-        <module>gamemodeservice</module>
         <module>application</module>
+        <module>passwordservice</module>
+        <module>passwordprovider</module>
+        <module>passwordconsumer</module>
     </modules>
 
     <properties>

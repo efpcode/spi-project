@@ -22,22 +22,8 @@ public class EnglishMenu implements Menu {
     }
 
     @Override
-    public String getBackButtonText() {
-        return "Back";
-    }
-
-    @Override
     public String getTitle() {
-        return "Welcome to Guess a Number Game";
+        return "Welcome to Password Generator";
     }
 
-    @Override
-    public String getGameButton() {
-        return "Guess";
-    }
-
-    @Override
-    public String getGameDescription() {
-        return "Guess A Number ";
-    }
 }
