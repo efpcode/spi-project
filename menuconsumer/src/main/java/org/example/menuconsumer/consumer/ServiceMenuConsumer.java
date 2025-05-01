@@ -3,6 +3,8 @@ import org.example.menuservice.menu.Menu;
 import org.example.menuservice.menu.MenuLanguage;
 
 
+import java.util.List;
+import java.util.Objects;
 import java.util.ServiceLoader;
 
 import static java.io.IO.*;
@@ -13,8 +15,17 @@ public class ServiceMenuConsumer {
     public static void initializeMenu() {
 
         ServiceLoader<Menu> loader = ServiceLoader.load(Menu.class);
-        println("Select a language : [1] English, [2] Svenska");
-        String userInput = getSelectedMenu();
+
+        println("Select a language:");
+        var allLanguages = loader.stream()
+                .map(ServiceLoader.Provider::get)
+                .map(menu -> menu.getClass().getAnnotation(MenuLanguage.class))
+                .filter(Objects::nonNull)
+                .map(MenuLanguage::value)
+                .toList();
+
+
+        String userInput = getSelectedMenu(allLanguages);
 
         for (Menu menu : loader) {
             MenuLanguage menuLanguage = menu.getClass().getAnnotation(MenuLanguage.class);
@@ -53,26 +64,24 @@ public class ServiceMenuConsumer {
     }
 
 
-    private static String getSelectedMenu() {
-        String userInput;
-        int userInt;
+    private static String getSelectedMenu(List<String> options) {
+        int index = 1;
+
+        for (String option : options) {
+            println(index +": "+ option);
+            index++;
+        }
 
         while (true) {
             try {
-                userInput = readln("Please enter a digit: ");
-                userInt = Integer.parseInt(userInput);
-                break;
+                int userInt = Integer.parseInt(readln("Please enter a digit: "));
+                return options.get(userInt -1);
             } catch (NumberFormatException e) {
                 println("Invalid Input!");
+            }catch (ArrayIndexOutOfBoundsException e){
+                println("Option is not present please pick valid option");
             }
         }
-
-
-        return switch (userInt) {
-            case 1 -> "English";
-            case 2 -> "Svenska";
-            default -> "English";
-        };
 
     }
 }
