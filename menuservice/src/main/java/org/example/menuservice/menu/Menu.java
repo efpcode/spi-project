@@ -5,6 +5,10 @@ public interface Menu {
     public String getOptionsButtonText();
     public String getQuitButtonText();
     public String getTitle();
+    public String getOptionsQuestionText();
+    public String getOptions();
+    public String getPasswordLengthQuestionText();
+    public String getKeepRunningQuestionText();
 
 
 

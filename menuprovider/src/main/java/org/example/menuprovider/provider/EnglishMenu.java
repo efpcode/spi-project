@@ -26,4 +26,25 @@ public class EnglishMenu implements Menu {
         return "Welcome to Password Generator";
     }
 
+    @Override
+    public String getOptionsQuestionText() {
+        return "Create password with: ";
+    }
+
+    @Override
+    public String getOptions() {
+        return "Select options: [1] Letters, [2] Digits, [3] Symbols";
+    }
+
+    @Override
+    public String getPasswordLengthQuestionText() {
+        return "Enter the length of the password digits: ";
+    }
+
+    @Override
+    public String getKeepRunningQuestionText() {
+        return "Do you wish to continue the application [y]/n ?: ";
+    }
+
+
 }

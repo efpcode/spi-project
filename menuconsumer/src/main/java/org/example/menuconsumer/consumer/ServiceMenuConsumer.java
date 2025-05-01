@@ -39,6 +39,19 @@ public class ServiceMenuConsumer {
         println("[3]: " + selectedMenu.getQuitButtonText());
     }
 
+    public static void showOptionsMenu() {
+        println(selectedMenu.getOptionsQuestionText());
+        println(selectedMenu.getOptions());
+    }
+
+    public static void showPasswordLengthMenu() {
+        println(selectedMenu.getPasswordLengthQuestionText());
+    }
+
+    public static void showExitMenu(){
+        println(selectedMenu.getKeepRunningQuestionText());
+    }
+
 
     private static String getSelectedMenu() {
         String userInput;

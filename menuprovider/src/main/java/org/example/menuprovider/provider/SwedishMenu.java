@@ -24,5 +24,25 @@ public class SwedishMenu implements Menu {
         return "Välkommen till Lösenord Generatorn";
     }
 
+    @Override
+    public String getOptionsQuestionText() {
+        return "Skapa lösenord som innehåller följande tecken:";
+    }
+
+    @Override
+    public String getOptions() {
+        return "Välj: [1] Bokstäver, [2] Siffror, [3] Symboler";
+    }
+
+    @Override
+    public String getPasswordLengthQuestionText() {
+        return "Sätt längden på lösenordet: ";
+    }
+
+    @Override
+    public String getKeepRunningQuestionText() {
+        return "Vill du fortsätta hålla i gång applikation [j]/n ?: ";
+    }
+
 
 }
