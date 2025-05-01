@@ -4,7 +4,7 @@ import org.example.menuconsumer.consumer.ServiceMenuConsumer;
 import org.example.passwordconsumer.password.PassWordConsumer;
 
 import java.util.*;
-import java.util.regex.Matcher;
+import java.util.regex.MatchResult;
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 
@@ -33,7 +33,7 @@ public class Main {
             ServiceMenuConsumer.showExitMenu();
             var userInput = readln(">>> ").toLowerCase();
 
-            isLoop = !userInput.contains("n");
+            isLoop = !userInput.equalsIgnoreCase("n");
 
 
         }
@@ -46,7 +46,7 @@ public class Main {
                 return Integer.parseInt(userInput);
 
             }catch (NumberFormatException e){
-                println("Invalid entry, please use only digits");
+                println("Invalid entry, please enter only digits/numbers");
             }
         }
     }
@@ -61,35 +61,33 @@ public class Main {
 
 
     private static Set<String> entropyOptions(String userInput) {
-        if(userInput.isBlank()){
-            userInput = "1";
-        };
         Map<String, String> selectedOptions = Map.of(
                 "1", "letters",
                 "2", "digits",
                 "3", "symbols"
         );
 
-        var sanitizedSelectedOptions = santizeSelectedOptions(userInput);
-
-        return sanitizedSelectedOptions.stream().map(selectedOptions::get)
+        return sanitizedSelectedOptions(userInput).stream()
+                .map(selectedOptions::get)
                 .filter(Objects::nonNull)
                 .collect(Collectors.toSet());
 
 
     }
 
-    private static List<String> santizeSelectedOptions(String userInput) {
+    private static List<String> sanitizedSelectedOptions(String userInput) {
 
-        Pattern pattern = Pattern.compile("\\d");
-        Matcher matcher = pattern.matcher(userInput);
+        if(userInput.isBlank()){
+            return List.of("1");
 
-        List<String> selectedOptions = new ArrayList<>();
-
-        while (matcher.find()) {
-            selectedOptions.add(matcher.group());
         }
-        return selectedOptions;
+
+        return Pattern.compile("\\d")
+                .matcher(userInput)
+                .results()
+                .map(MatchResult::group)
+                .toList();
+
     }
 
 }
