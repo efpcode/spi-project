@@ -1,6 +1,8 @@
 #!/bin/bash
 
-
+# Compiles module to jar files
+echo "Compiling modules with maven"
+mvn clean package
 
 # Create the libs directory if it doesn't exist
 mkdir -p libs
