@@ -100,7 +100,7 @@ This command should only be run if the ``Initial Run`` step has been performed.
 
 # Troubleshoot with Docker
 
-1. Ensure that Docker Desktop or similar application is running before running any of ``run_docker``
+1. Ensure that Docker Desktop or similar application is running before running any of ``run_docker`` files.
 2. Ensure that image called ``my-java-app:latest`` is removed and re-run the script for respective platform with the ``Initial Run`` description.  
 
 # Lastly 
