@@ -12,10 +12,10 @@ This is a school project that explores the SPI architecture and design.
 ## Supports
 Linux, MacOSx, [Windows](#windows-steps-to-run-application)
 
-## Docker Hub Installation
+## Docker Hub Installation Linux \& MacOSX
 This project has supports for docker hub installation as well image currently can be downloaded to your local directory with
 the following command:
-1. Downloads image from hub.
+1. Downloads image from hub:
 ```shell
  docker pull efpcode/spi-demo:latest
 ```
@@ -25,7 +25,17 @@ the following command:
 docker run --rm -it efpcode/spi-demo:latest
 ```
 
-## Getting started
+## Docker Hub Installation Windows
+1. Download image from hub:
+```powershell
+docker pull efpcode/spi-demo:windows
+```
+2. Run downloaded image with the command below:
+```powershell
+docker run --rm -it efpcode/spi-demo:windows
+```
+
+## Getting Started Locally
 All described steps assume that you have access to a terminal with a posix system or similar to it. 
 
 #### Step 0
