@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 # Compiles module to jar files
 echo "Compiling modules with maven"

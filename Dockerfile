@@ -9,7 +9,8 @@ COPY */target/*.jar /app/libs/
 COPY run.sh /app/run.sh
 
 # Install dependencies & set script permissions at the end
-RUN apk add --no-cache bash && chmod +x /app/run.sh
+#RUN apk add --no-cache bash && chmod +x /app/run.sh
+RUN chmod +x /app/run.sh
 
 # Ensure the application runs interactively
-ENTRYPOINT ["/bin/bash","-i" ,"-c", "exec /app/run.sh < /dev/tty"]
+ENTRYPOINT ["/bin/sh","-i" ,"-c", "exec /app/run.sh"]
