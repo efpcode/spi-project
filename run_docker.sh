@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 CONTAINER_RUNNING=$(docker ps --filter "ancestor=my-java-app" --format "{{.ID}}")
 
 # Default: No Maven build unless `--compile` or `-c` is provided
