@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.Objects;
 import java.util.ServiceLoader;
 
-import static java.io.IO.*;
+import static java.lang.IO.*;
 
 public class ServiceMenuConsumer {
     private static Menu selectedMenu;
