@@ -7,19 +7,18 @@ mvn clean package
 # Create the libs directory if it doesn't exist
 mkdir -p libs
 
-# Define an array of module directories
-modules=(
-  "application"
-  "menuconsumer"
-  "menuprovider"
-  "menuservice"
-  "passwordconsumer"
-  "passwordprovider"
-  "passwordservice"
-)
 
 # Loop through each module and copy JAR files to libs
-for module in "${modules[@]}"; do
+for module in \
+  application \
+  menuconsumer \
+  menuprovider \
+  menuservice \
+  passwordconsumer \
+  passwordprovider \
+  passwordservice
+
+do
   cp ./"$module"/target/*.jar ./libs/
 done
 

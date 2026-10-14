@@ -12,8 +12,8 @@
     <artifactId>menuservice</artifactId>
 
     <properties>
-        <maven.compiler.source>24</maven.compiler.source>
-        <maven.compiler.target>24</maven.compiler.target>
+        <maven.compiler.source>25</maven.compiler.source>
+        <maven.compiler.target>25</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
@@ -22,13 +22,10 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.13.0</version> <!-- Ensure latest stable version -->
+                <version>3.16.0</version> <!-- Ensure latest stable version -->
                 <configuration>
-                    <source>24</source>
-                    <target>24</target>
-                    <compilerArgs>
-                        --enable-preview
-                    </compilerArgs>
+                    <source>25</source>
+                    <target>25</target>
                 </configuration>
             </plugin>
         </plugins>

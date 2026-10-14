@@ -4,14 +4,14 @@ CONTAINER_RUNNING=$(docker ps --filter "ancestor=my-java-app" --format "{{.ID}}"
 # Default: No Maven build unless `--compile` or `-c` is provided
 COMPILE=false
 for arg in "$@"; do
-  if [ "$arg" == "--compile" ] || [ "$arg" == "-c" ]; then
+  if [ "$arg" = "--compile" ] || [ "$arg" = "-c" ]; then
     COMPILE=true
     break
   fi
 done
 
 # Run Maven build only if `--compile` or `-c` is passed
-if [ "$COMPILE" == "true" ]; then
+if [ "$COMPILE" = "true" ]; then
   echo "Building all modules with Maven..."
   mvn clean package
 else

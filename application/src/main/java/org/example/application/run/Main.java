@@ -8,8 +8,8 @@ import java.util.regex.MatchResult;
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 
-import static java.io.IO.println;
-import static java.io.IO.readln;
+import static java.lang.IO.println;
+import static java.lang.IO.readln;
 
 public class Main {
     public static void main(String[] args) {

@@ -6,7 +6,7 @@ import org.example.passwordservice.password.PasswordCharacters;
 import java.util.ServiceLoader;
 import java.util.Set;
 
-import static java.io.IO.println;
+import static java.lang.IO.println;
 
 public class PassWordConsumer {
     private static StringBuilder characters= new StringBuilder();
